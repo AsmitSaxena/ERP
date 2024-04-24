@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP || Catagory</title>
+    <style>
+        :root{
+            --text :#fefffd;
+            --button :#ff0303;
+            --background : linear-gradient(#063349 0%, #090979 35%, #00d4ff         100%);;
+            --background-image: radial-gradient( circle farthest-corner at 10%      20%,  rgba(0, 255, 234, 0.719) 0%, rgb(2, 85, 100) 90% );
+            }
+
+        body{
+            background: var(--background);
+            height: 100vh;
+            }
+
+            h1{
+            text-align: center;
+            padding: 50px;
+            font-size:50px;
+            font-weight:bolder;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }    
+
+            form{
+            padding: 3px;
+            margin: 5%;
+            border-radius: 15px;
+            background-color: rgb(255, 255, 255, 0.1);
+            height: 270px;
+            /* width: 500px; */
+            border-top: 1px solid rgb(255, 255, 255, 0.75);
+            border-left: 1px solid rgb(255, 255, 255, 0.75);
+            box-shadow: 0 25px 45px rgb(0, 0, 0, 0.5);
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+            }
+
+            button {
+                border-radius: 20px;
+                height: 30px;
+                width: 100px;
+            } 
+
+
+
+    </style>
+</head>
+<body>
+    <h1>ERP Catagory</h1>
+    <form action="" method="get" autocomplete="on">
+        <h2>Select Catagory</h2>
+        <input type="radio" name="Catagory" value="TEACHER">
+        <label for="html">TEACHER</label><br>
+        <input type="radio" name="Catagory" value="STUDENT">
+        <label for="css">STUDENT</label><br><br>
+        
+        <button type="button" onclick="redirectToPage()">Next</button>
+
+    </form>
+
+
+</body>
+
+<script>
+    function redirectToPage() {
+      var selectedCatagory = document.querySelector('input[name="Catagory"]:checked');
+      if (selectedCatagory) {
+        if (selectedCatagory.value === "TEACHER") {
+          window.location.href = "FacultyLogin.html";
+        } else if (selectedCatagory.value === "STUDENT") {
+          window.location.href = "StudentLogin.html";
+        }
+      } else {
+        alert("Please select a Catagory.");
+      }
+    }
+</script>
+</html>
